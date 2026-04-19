@@ -29,23 +29,46 @@ export function createOverlayWindow() {
   })
 
   overlayWindow.on('focus', () => {
-    overlayWindow?.setAlwaysOnTop(true)
+    overlayWindow?.setAlwaysOnTop(true, 'floating')
   })
 
   return overlayWindow
 }
 
-export function getOverlayWindow() {
-  return overlayWindow
-}
-
 export function showOverlay() {
   if (!overlayWindow) return
+
+  overlayWindow.setAlwaysOnTop(true, 'floating')
   overlayWindow.show()
   overlayWindow.focus()
   overlayWindow.webContents.send('overlay:opened')
 }
 
 export function hideOverlay() {
-  overlayWindow?.hide()
+  if (!overlayWindow) return
+  overlayWindow.hide()
+  overlayWindow.webContents.send('overlay:hidden')
+}
+
+export function toggleOverlay() {
+  if (!overlayWindow) return
+  if (overlayWindow.isVisible()) overlayWindow.hide()
+  else overlayWindow.show()
+}
+
+export function handleOverlayShortcut() {
+  if (!overlayWindow) return
+
+  if (!overlayWindow.isVisible()) {
+    showOverlay()
+    return
+  }
+
+  if (!overlayWindow.isFocused()) {
+    showOverlay()
+    return
+  }
+
+  // second press while focused = explicit dismiss
+  hideOverlay()
 }

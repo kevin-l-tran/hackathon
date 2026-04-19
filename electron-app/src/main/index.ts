@@ -2,7 +2,7 @@ import { app, shell, BrowserWindow, ipcMain, globalShortcut } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { createOverlayWindow, showOverlay } from './window'
+import { createOverlayWindow, handleOverlayShortcut } from './window'
 
 function createWindow(): void {
   // Create the browser window.
@@ -57,7 +57,7 @@ app.whenReady().then(() => {
   createOverlayWindow()
 
   globalShortcut.register('CommandOrControl+Shift+K', () => {
-    showOverlay()
+    handleOverlayShortcut()
   })
 
   app.on('activate', function () {
