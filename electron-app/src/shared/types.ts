@@ -2,7 +2,7 @@ export type Checkpoint = {
   id: string
   taskId: string
   description: string
-  createdAt: string[]
+  createdAt: string
 }
 
 export type Task = {
