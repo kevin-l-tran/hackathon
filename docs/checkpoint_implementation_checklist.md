@@ -29,8 +29,8 @@
 
 ### 4) Global shortcut and overlay — **1.5 to 2 hours**
 
-* [ ] Register global shortcut
-* [ ] Open overlay instantly
+* [X] Register global shortcut
+* [X] Open overlay instantly
 * [ ] Add short text input
 * [ ] Add attach clipboard button
 * [ ] Add save to current task / create new task
