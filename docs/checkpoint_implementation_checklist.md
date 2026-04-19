@@ -22,8 +22,8 @@
 ### 3) IPC and preload API — **1 to 1.5 hours**
 
 * [X] Implement minimal IPC contract
-* [ ] Expose only the typed methods you need
-* [ ] Keep renderer free of raw Node access
+* [X] Expose only the typed methods you need
+* [X] Keep renderer free of raw Node access
 
 **Time notes:** worth doing cleanly once so you do not fight structure later.  
 

@@ -75,7 +75,8 @@ export function registerIpcHandlers(): void {
 
 /**
  * Suggests a better task title from the initial checkpoint description.
- * Safe to fail silently because storage already created a fallback title.
+ * Safe to fail without interrupting capture because storage already created a fallback title.
+ * Errors are logged for debugging.
  */
 async function suggestAndPersistTitle(taskId: string, description: string): Promise<void> {
   const trimmed = description.trim()
@@ -93,7 +94,8 @@ async function suggestAndPersistTitle(taskId: string, description: string): Prom
 
 /**
  * Rebuilds the cached snapshot for a task from its most recent checkpoints.
- * Safe to fail silently because raw checkpoints remain the source of truth.
+ * Safe to fail without interrupting resume because raw checkpoints remain the source of truth.
+ * Errors are logged for debugging.
  */
 async function refreshSnapshotForTask(taskId: string): Promise<void> {
   try {
