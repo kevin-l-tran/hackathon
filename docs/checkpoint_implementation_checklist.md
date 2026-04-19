@@ -11,11 +11,11 @@
 
 ### 2) Local data layer — **1 to 1.5 hours**
 
-* [ ] Create local JSON storage file
-* [ ] Define `Task` and `Checkpoint` models
-* [ ] Add read/write helpers
-* [ ] Handle first-run empty state
-* [ ] Update timestamps correctly
+* [X] Create local JSON storage file
+* [X] Define `Task` and `Checkpoint` models
+* [X] Add read/write helpers
+* [X] Handle first-run empty state
+* [X] Update timestamps correctly
 
 **Time notes:** keep this dead simple; one JSON file is the right hackathon choice. 
 
