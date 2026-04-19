@@ -4,8 +4,8 @@
 
 * [X] Create Electron + TypeScript + React + Vite project
 * [X] Set up `main`, `preload`, and `renderer` folders
-* [ ] Create overlay window and main window
-* [ ] Confirm privileged logic stays in main process
+* [X] Create overlay window and main window
+* [X] Confirm privileged logic stays in main process
 
 **Time notes:** fast if you use a starter; slower if Electron packaging/config fights you.  
 
